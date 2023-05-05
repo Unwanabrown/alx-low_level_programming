@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * get_bit - value of a bit at a given index
- * @n: decimal parameter
- * @index: index
- * Return: val
- */
-int get_bit(unsigned long int n, unsigned int index)
-{
-	int bit;
+*print_binary - prints the binary representation of a number
+*@n: number to be printed
+*
+*Return: void
+*/
 
-	bit = (n >> index);
-	if (index > 32)
-	return (-1);
-	return (bit & 1);
+void print_binary(unsigned long int n)
+{
+if (n > 1)
+	print_binary(n >> 1);
+
+_putchar((n & 1) + '0');
 }
